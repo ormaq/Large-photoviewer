@@ -1,0 +1,190 @@
+/* Global resets */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  font-family: sans-serif;
+  background: #333;
+  overflow: hidden;
+}
+
+/* Viewer container */
+.viewer-container {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%;
+  height: calc(100% - 80px);
+}
+
+/* Controls at bottom */
+.controls-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background: #222;
+  border-top: 1px solid #444;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom-controls {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  width: 90%;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+/* Left side button container */
+.button-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+/* Existing control buttons */
+.control-btn {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 0.9em;
+  border-radius: 3px;
+}
+.control-btn:hover {
+  background: #555;
+}
+
+/* Center slider container */
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* Increased width for easier use */
+.main-slider-container {
+  width: 80%; 
+}
+
+/* The wrapper that holds the slider and the new nav buttons */
+.slider-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+/* New stylized buttons for stepping through images */
+.slider-nav-btn {
+  background: linear-gradient(135deg, rgba(85, 102, 255, 0.4), rgba(85, 102, 255, 0.4));
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 1em;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.slider-nav-btn:hover {
+  background: linear-gradient(135deg, #ff9999, #ff4444);
+}
+
+/* Compare container on the right side */
+.compare-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.compare-label {
+  color: #fff;
+  margin-right: 10px;
+  font-size: 0.9em;
+}
+
+.compare-select {
+  background: #444;
+  color: #fff;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.fade-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Slider styling */
+.styled-slider {
+  -webkit-appearance: none; /* Remove default styling */
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  background: #444;
+  outline: none;
+  margin: 10px 0;
+}
+.styled-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  border: 2px solid #999;
+  transition: background 0.3s;
+}
+.styled-slider::-webkit-slider-thumb:hover {
+  background: #ccc;
+}
+.styled-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border: none;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+  border: 2px solid #999;
+  transition: background 0.3s;
+}
+.styled-slider::-moz-range-thumb:hover {
+  background: #ccc;
+}
+
+/* Date label below slider */
+.date-label {
+  font-size: 1em;
+  color: #fff;
+  margin: 5px 0;
+}
+
+/* Loading indicator */
+.viewer-container::before {
+  content: "Loading...";
+  color: #fff;
+  font-size: 1.2em;
+  position: absolute;
+  top: 50%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.viewer-container.loaded::before {
+  content: "";
+}

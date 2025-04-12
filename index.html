@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Historic Farm Viewer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="viewer" class="viewer-container"></div>
+
+<div class="controls-container">
+  <div class="bottom-controls">
+
+    <!-- Left side controls -->
+    <div class="button-container">
+      <button id="rotate-btn" class="control-btn">Rotate</button>
+      <button id="zoom-btn" class="control-btn">Zoom</button>
+      <button id="compare-btn" class="control-btn">Compare OFF</button>
+    </div>
+
+    <!-- Center: Main date slider + new prev/next buttons -->
+    <div class="slider-container main-slider-container">
+
+      <!-- This wrapper holds the two new buttons and the slider -->
+      <div class="slider-controls">
+        <button id="prev-image-btn" class="slider-nav-btn">◀</button>
+        
+        <input 
+          type="range" 
+          id="date-slider" 
+          class="styled-slider" 
+          min="0" 
+          step="1"
+        />
+
+        <button id="next-image-btn" class="slider-nav-btn">▶</button>
+      </div>
+
+      <div id="date-label" class="date-label"></div>
+    </div>
+
+    <!-- Right side: compare controls -->
+    <div class="compare-container" style="display:none;">
+      <div class="compare-select-container">
+        <span class="compare-label">Compare With:</span>
+        <select id="compare-select" class="compare-select"></select>
+      </div>
+      <div class="fade-container">
+        <span class="compare-label">Fade:</span>
+        <input 
+          type="range" 
+          id="fade-slider" 
+          class="styled-slider" 
+          min="0" 
+          max="1" 
+          step="0.01" 
+          value="0.5" 
+        />
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="openseadragon.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
